@@ -63,19 +63,19 @@ class Date:
             else:
                 self.day = str(int(self.day) + 1)
 
-    def __lt__(self, other):
-        """Less than comparison for dates in sequential order"""
+    def __le__(self, other):
+        """Less than or equal to comparison for dates in sequential order"""
         if self.year == other.year:
             if self.month == other.month:
-                if self.day < other.day:
+                if self.day <= other.day:
                     return True
                 else:
                     return False
-            elif self.month < other.month:
+            elif self.month <= other.month:
                 return True
             else:
                 return False
-        elif self.year < other.year:
+        elif self.year <= other.year:
             return True
         else:
             return False
